@@ -1,0 +1,102 @@
+name: Maru Builder
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+    name: Generate APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Gradle cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      
+      - name: set up JDK 1.8
+        uses: actions/setup-java@v2
+        with:
+          java-version: 1.8
+          
+      - name: Change gradlew permissions
+        run: chmod +x ./gradlew
+        
+      - name: Build debug APK
+        run: ./gradlew assembleDebug --stacktrace
+        
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+          name: app
+          path: app/build/outputs/apk/debug
+          
+      - name: On Failed, Notify in Slack
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_TITLE: 'Maru/Anroid Debug build Fail❌'
+          SLACK_COLOR: '#ff3c34'
+          MSG_MINIMAL: true
+          SLACK_MESSAGE: '에러를 확인해주세요'
+
+      - name: Upload APK
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: apk
+          path: app/build/outputs/apk/debug/
+          
+  upload:
+    needs: [build]
+    name: upload to Slack
+    runs-on: ubuntu-latest
+    steps:        
+      - name: download Article
+        uses: actions/download-artifact@v2
+        with:
+          name: apk
+          
+      - name: Update Release apk name
+        if: ${{ success() }}
+        run: |
+          mv app-debug.apk Maru-Debug.apk
+          echo 'apk=Maru-Debug.apk' >> $GITHUB_ENV
+          
+      - name: Upload APK at Slack
+        if: ${{ success() }}
+        run: |
+          curl -X POST \
+          -F file=@$apk \
+          -F channels=${{secrets.SLACK_CHANNEL_ID}} \
+          -H "Authorization: Bearer ${{secrets.SLACK_BOT_TOKEN}}" \
+          https://slack.com/api/files.upload
+          
+      - name: On Success
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_TITLE: 'Maru/Anroid Debug build Success✅'
+          SLACK_COLOR: '#4169e1'
+          MSG_MINIMAL: true
+          SLACK_MESSAGE: 'APK 생성 완료! '
+
+      - name: On Success but Fail
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_TITLE: 'Maru/Anroid Debug build Success✅'
+          SLACK_COLOR: '#e0534e'
+          MSG_MINIMAL: true
+          SLACK_MESSAGE: '빌드는 완료 되었으나 APK업로드 에러'
