@@ -1,8 +1,9 @@
 plugins {
     id("com.android.application")
+    id("org.jlleitschuh.gradle.ktlint")
+    id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("kapt")
-    id("org.jlleitschuh.gradle.ktlint")
 }
 
 android {
@@ -51,6 +52,8 @@ dependencies {
     testImplementation(TestDependencies.jUnit)
     androidTestImplementation(TestDependencies.androidTest)
     androidTestImplementation(TestDependencies.espresso)
+    implementation(AndroidXDependencies.hilt)
+    kapt(KaptDependencies.hiltCompiler)
 }
 
 ktlint {
