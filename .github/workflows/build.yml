@@ -23,7 +23,7 @@ jobs:
             ${{ runner.os }}-gradle-
       
       - name: set up JDK 1.8
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v1
         with:
           java-version: 1.8
           
@@ -32,19 +32,13 @@ jobs:
         
       - name: Build debug APK
         run: ./gradlew assembleDebug --stacktrace
-        
-      - name: Upload APK
-        uses: actions/upload-artifact@v2
-        with:
-          name: app
-          path: app/build/outputs/apk/debug
           
       - name: On Failed, Notify in Slack
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: 'Maru/Anroid Debug build Fail❌'
+          SLACK_TITLE: 'Maru/Android Debug build Fail❌'
           SLACK_COLOR: '#ff3c34'
           MSG_MINIMAL: true
           SLACK_MESSAGE: '에러를 확인해주세요'
@@ -86,7 +80,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: 'Maru/Anroid Debug build Success✅'
+          SLACK_TITLE: 'Maru/Android Debug build Success✅'
           SLACK_COLOR: '#4169e1'
           MSG_MINIMAL: true
           SLACK_MESSAGE: 'APK 생성 완료! '
@@ -96,7 +90,7 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: 'Maru/Anroid Debug build Success✅'
+          SLACK_TITLE: 'Maru/Android Debug build Success✅'
           SLACK_COLOR: '#e0534e'
           MSG_MINIMAL: true
           SLACK_MESSAGE: '빌드는 완료 되었으나 APK업로드 에러'
