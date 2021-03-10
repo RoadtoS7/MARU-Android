@@ -5,19 +5,20 @@
   <img src="https://img.shields.io/badge/Android-4.1.2-blue?logo=Android+Studio"/>
   <img src="https://img.shields.io/badge/targetSdk-30-green?logo=Android"/>
   <img src="https://img.shields.io/badge/minSdk-26-green?logo=Android"/>
+  <img src="https://github.com/bookmaru/MARU-Android/actions/workflows/build.yml/badge.svg"/>
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/minSdk-26-green?logo=Android"/>
+    <img src="https://user-images.githubusercontent.com/54518925/98941523-0eafeb00-2530-11eb-8bc2-b7c63702fe49.jpeg"/>
 </p>
 
 <p align="center">
   <h2 align="center">언제든 어디서든, 책과 사람을 이어주는 공간</h2>
   <p align="center">
   언제 어디서든 책과 사람을 이어주는 공간, 마루 온라인 독서 토론 플랫폼 마루를 만나보세요. <br />
-  **[책을 읽고 사람과 잇다]** 책을 통해 다양한 사람들이 모여 밀도 있는 대화의 시간을 만들어 나갑니다. <br />
-  **[언제나, 어디서나]** 국내 최초 온라인 독서 토론 전문 플랫폼 마루는 멀리 떨어져 있어도 마음을 잇는 법을 제시합니다. <br />
-  **[소통하는 독서의 즐거움]** 독서 후의 여운을 사람들과 함께 나누면서 진정한 자아를 찾는 공간 여기는 마루입니다. <br />
+  <b>[책을 읽고 사람과 잇다]</b> 책을 통해 다양한 사람들이 모여 밀도 있는 대화의 시간을 만들어 나갑니다. <br />
+  <b>[언제나, 어디서나]</b> 국내 최초 온라인 독서 토론 전문 플랫폼 마루는 멀리 떨어져 있어도 마음을 잇는 법을 제시합니다. <br />
+  <b>[소통하는 독서의 즐거움]</b> 독서 후의 여운을 사람들과 함께 나누면서 진정한 자아를 찾는 공간 여기는 마루입니다. <br />
   </p>
 </p>
 <br/>
@@ -47,20 +48,30 @@
         </td>
     </tr>
     <tr>
-        <td align="center">
+        <td>
             - [OUNCE](https://github.com/teamOunce/Ounce_Android) Android Lead 개발자
+            </br>
             - [BeMe](https://github.com/TeamBeMe/BeMeAndroid) Android Lead 개발자
+            </br>
             - [Maru](https://github.com/bookmaru/MARU-Android) Android Lead 개발자
+            </br>
             - 우리는 잇습니다, 책과 사람을
+            </br>
             - 일 벌이기 주의: 이 사람에게 프로젝트를 마구잡이로 던지지 마시오.
         </td>
-        <td align="center">
+        <td>
             - [Mongle](https://github.com/Sopt-Mongle/MongleAndroid_RELEASE) Android 개발자
+            </br>
             - [ALGOALGO](https://github.com/ALGOALGO-swu/algoalgo-discord-bot) 디스코드 봇 Server 개발자
+            </br>
             - 여기어때 정보보안실 사내프로그램 개발 인턴 (server)
+            </br>
             - 더 나은 Android 어플리케이션 개발을 위해 [Android Jetpack && MVVM pattern](https://github.com/sery270/sunflower_clone)를 공부하고 있습니다. 🌱
+            </br>
             - 벌레를 열심히 잡는편입니다. MARU Bug들도 맡겨주세요.
+            </br>
             - 취급주의 : 음악이 끊기면 곤란합니다. 그리고 주기적으로 술 마셔주셔야 합니다.
+            </br>
         </td>
     </tr>
 </table>
