@@ -54,6 +54,8 @@ dependencies {
     androidTestImplementation(TestDependencies.espresso)
     implementation(AndroidXDependencies.hilt)
     kapt(KaptDependencies.hiltCompiler)
+    implementation(AndroidXDependencies.navigationFragment)
+    implementation(AndroidXDependencies.navigationUI)
 }
 
 ktlint {

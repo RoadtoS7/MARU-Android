@@ -7,6 +7,7 @@ object Versions {
     const val material_design_version = "1.3.0"
     const val constraint_layout_version = "2.0.4"
     const val hilt_version = "2.33-beta"
+    const val nav_verion = "2.3.3"
 
     const val gradle_version = "4.1.2"
 
