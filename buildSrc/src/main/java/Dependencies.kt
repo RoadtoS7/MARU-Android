@@ -8,6 +8,8 @@ object AndroidXDependencies {
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout_version}"
     const val hilt = "com.google.dagger:hilt-android:${Versions.hilt_version}"
+    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_verion}"
+    const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.nav_verion}"
 }
 
 object TestDependencies {
