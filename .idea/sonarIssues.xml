@@ -53,6 +53,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/kr/co/marubook/data/remote/repository/HomeRepositoryImpl.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/kr/co/marubook/presentation/home/HomeFragment.kt">
           <value>
             <set />
