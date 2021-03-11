@@ -1,6 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply(plugin = "org.jlleitschuh.gradle.ktlint")
 buildscript {
+    val kotlin_version by extra("1.4.31")
     repositories {
         google()
         jcenter()
