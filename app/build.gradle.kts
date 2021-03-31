@@ -49,8 +49,6 @@ dependencies {
     implementation(AndroidXDependencies.coreKtx)
     implementation(MaterialDesignDependencies.materialDesign)
     implementation(AndroidXDependencies.constraintLayout)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     testImplementation(TestDependencies.jUnit)
     androidTestImplementation(TestDependencies.androidTest)
     androidTestImplementation(TestDependencies.espresso)
