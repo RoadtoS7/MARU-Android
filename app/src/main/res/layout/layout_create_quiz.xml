@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:background="@color/very_light_pink_three"
+        app:layout_constraintBottom_toBottomOf="@id/tv"
+        app:layout_constraintEnd_toEndOf="@id/tv_quiz_num"
+        app:layout_constraintStart_toStartOf="@id/tv" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUIZ "
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_quiz_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tv"
+        app:layout_constraintTop_toTopOf="@id/tv" />
+
+    <EditText
+        android:id="@+id/et_quiz"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_create_edittext_background"
+        android:hint="퀴즈를 70자 이내로 입력해주세요."
+        android:padding="8dp"
+        android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv" />
+
+    <ImageView
+        android:id="@+id/btn_yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_close_24"
+        android:background="@color/very_light_pink_three"
+        android:padding="8dp"
+        app:layout_constraintEnd_toStartOf="@id/btn_no"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_quiz"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <ImageView
+        android:id="@+id/btn_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_close_24"
+        android:background="@color/warmGrey"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_yes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_yes"
+        app:layout_constraintTop_toTopOf="@id/btn_yes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

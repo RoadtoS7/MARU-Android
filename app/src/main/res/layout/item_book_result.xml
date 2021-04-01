@@ -17,7 +17,8 @@
             android:id="@+id/img_book"
             android:layout_width="80dp"
             android:layout_height="140dp"
-            android:background="@color/black"
+            android:src="@drawable/img_book_background"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
